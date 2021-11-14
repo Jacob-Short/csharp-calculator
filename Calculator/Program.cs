@@ -10,7 +10,7 @@ namespace Calculator
         {
             return x + y;
         }
-       
+
         static double Subtraction(double x, double y)
         {
             return x - y;
@@ -26,11 +26,13 @@ namespace Calculator
             return x * y;
         }
 
+
         static void Main(string[] args)
         {
             bool gameLoop = true;
             while (gameLoop)
             {
+
                 Console.WriteLine("Calculator...\n");
                 Console.WriteLine("Lets do some Math <3\n");
 
@@ -48,37 +50,29 @@ namespace Calculator
                 Console.Write("Now please enter your second number:\n");
                 double inputNumberTwo = Convert.ToDouble(Console.ReadLine());
 
-                if (inputOperation == 1)
+                double result;
+
+                switch (inputOperation)
                 {
-                    double result = Addition(inputNumberOne, inputNumberTwo);
-                    Console.WriteLine($"Your answer is:\n{result}");
-
-
-                }
-
-                else if (inputOperation == 2)
-                {
-                    double result = Subtraction(inputNumberOne, inputNumberTwo);
-                    Console.WriteLine($"Your answer is:\n{result}");
-
-                }
-
-                else if (inputOperation == 3)
-                {
-                    double result = Division(inputNumberOne, inputNumberTwo);
-                    Console.WriteLine($"Your answer is:\n{result}");
-
-                }
-
-                else if (inputOperation == 4)
-                {
-                    double result = Multiplication(inputNumberOne, inputNumberTwo);
-                    Console.WriteLine($"Your answer is:\n{result}");
-                }
-
-                else
-                {
-                    Console.WriteLine("Sorry that was not a valid option");
+                    case 1:
+                        result = Addition(inputNumberOne, inputNumberTwo);
+                        Console.WriteLine($"Your answer is:\n{result}");
+                        break;
+                    case 2:
+                        result = Subtraction(inputNumberOne, inputNumberTwo);
+                        Console.WriteLine($"Your answer is:\n{result}");
+                        break;
+                    case 3:
+                        result = Division(inputNumberOne, inputNumberTwo);
+                        Console.WriteLine($"Your answer is:\n{result}");
+                        break;
+                    case 4:
+                        result = Multiplication(inputNumberOne, inputNumberTwo);
+                        Console.WriteLine($"Your answer is:\n{result}");
+                        break;
+                    default:
+                        Console.WriteLine("Sorry that was not a valid option");
+                        break;
 
                 }
 
